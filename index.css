@@ -17,23 +17,10 @@ img {
 }
 
 #refresh {
-    display: block;
     margin: 20px auto;
-    border-radius: 7px;
-    border: none;
-    background-color: blue;
-    color: white;
-    padding: 5px 10px;
+    display: block;
 }
 
 #refresh i {
     margin: 0 5px 0 0;
-}
-
-#refresh:hover {
-    background-color: rgb(93, 93, 255);
-}
-
-#refresh:active {
-    background-color: darkblue;
 }
