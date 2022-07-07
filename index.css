@@ -30,3 +30,7 @@ img {
 #refresh i {
     margin: 0 5px 0 0;
 }
+
+.carousel img {
+    margin: 20px auto;
+}

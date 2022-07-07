@@ -24,6 +24,15 @@ function doInsertImages() {
     var images = doGetRequest();
 
     const imageContainer = document.getElementById("images");
+    const outerContainer = document.querySelector(".container-fluid");
+    let cd = document.createElement("div");
+    cd.setAttribute("class","carousel slide");
+    cd.setAttribute("data-ride","carousel");
+    let icd = document.createElement("div");
+    icd.setAttribute("class","carousel-inner");
+    cd.appendChild(icd);
+    outerContainer.appendChild(cd);
+
     images.then(i => i.forEach(u => {
         let p = document.createElement("img");
         p.setAttribute("src",u["download_url"]);
@@ -36,6 +45,18 @@ function doInsertImages() {
         a.setAttribute("class","imageLink");
         a.appendChild(p);
         imageContainer.appendChild(a);
+        let p2 = p.cloneNode();
+        p2.setAttribute("class","d-block w-25");
+        let pcd = document.createElement("div");
+        if (icd.childElementCount < 1) {
+            pcd.setAttribute("class","carousel-item active");    
+        } else {
+            pcd.setAttribute("class","carousel-item");
+        }
+        pcd.appendChild(p2);
+        icd.appendChild(pcd);
+        
+
     }));    
 }
 
