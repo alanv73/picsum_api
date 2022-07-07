@@ -29,7 +29,7 @@ function doInsertImages() {
         p.setAttribute("src",u["download_url"]);
         p.setAttribute("alt",`photo by: ${u["author"]}`);
         let a = document.createElement("a");
-        a.setAttribute("href",u["download_url"]);
+        a.setAttribute("href",u["url"]);
         a.setAttribute("target","blank");
         a.setAttribute("class","imageLink");
         a.appendChild(p);
