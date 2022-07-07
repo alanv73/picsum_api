@@ -11,9 +11,15 @@ h1 {
     justify-content: center;
 }
 
-img {
+a {
+    display: block;
     height: 200px;
     max-width: 30%;
+}
+
+img {
+    height: 100%;
+    max-width: 100%;
 }
 
 #refresh {

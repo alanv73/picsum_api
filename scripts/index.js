@@ -28,12 +28,12 @@ function doInsertImages() {
         let p = document.createElement("img");
         p.setAttribute("src",u["download_url"]);
         p.setAttribute("alt",`photo by: ${u["author"]}`);
-        // let a = document.createElement("a");
-        // a.setAttribute("href",u["download_url"]);
-        // a.setAttribute("target","blank");
-        // a.setAttribute("id","imageLink");
-        // a.appendChild(p);
-        imageContainer.appendChild(p);
+        let a = document.createElement("a");
+        a.setAttribute("href",u["download_url"]);
+        a.setAttribute("target","blank");
+        a.setAttribute("id","imageLink");
+        a.appendChild(p);
+        imageContainer.appendChild(a);
     }));    
 }
 
