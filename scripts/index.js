@@ -31,7 +31,7 @@ function doInsertImages() {
         let a = document.createElement("a");
         a.setAttribute("href",u["download_url"]);
         a.setAttribute("target","blank");
-        a.setAttribute("id","imageLink");
+        a.setAttribute("class","imageLink");
         a.appendChild(p);
         imageContainer.appendChild(a);
     }));    
