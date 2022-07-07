@@ -3,6 +3,7 @@ h1 {
 }
 
 #images {
+    max-width: 80%;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -11,7 +12,7 @@ h1 {
 }
 
 img {
-    height: 30vh;
+    height: 200px;
     max-width: 30%;
 }
 
