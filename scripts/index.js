@@ -27,7 +27,9 @@ function doInsertImages() {
     images.then(i => i.forEach(u => {
         let p = document.createElement("img");
         p.setAttribute("src",u["download_url"]);
-        p.setAttribute("alt",`photo by: ${u["author"]}`);
+        p.setAttribute("alt",`photo by ${u["author"]}`);
+        p.setAttribute("data-toggle","tooltip");
+        p.setAttribute("title",`photo by ${u["author"]}`);
         let a = document.createElement("a");
         a.setAttribute("href",u["url"]);
         a.setAttribute("target","blank");
