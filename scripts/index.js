@@ -20,18 +20,49 @@ function doRemoveAllImages() {
     }
 }
 
-function doInsertImages() {
-    var images = doGetRequest();
+function doRemoveCarousel() {
+    const carousel = document.querySelector(".carousel.slide");
+    carousel.remove()
+}
 
-    const imageContainer = document.getElementById("images");
+function doInsertCarousel(images) {
     const outerContainer = document.querySelector(".container-fluid");
     let cd = document.createElement("div");
     cd.setAttribute("class","carousel slide");
     cd.setAttribute("data-ride","carousel");
+    cd.setAttribute("data-pause","none");
+    cd.setAttribute("data-interval","False");
+
     let icd = document.createElement("div");
     icd.setAttribute("class","carousel-inner");
     cd.appendChild(icd);
     outerContainer.appendChild(cd);
+
+    images.then(i => i.forEach(u => {
+        let p = document.createElement("img");
+        p.setAttribute("src",u["download_url"]);
+        p.setAttribute("alt",`photo by ${u["author"]}`);
+        p.setAttribute("data-toggle","tooltip");
+        p.setAttribute("title",`photo by ${u["author"]}`);
+        p.setAttribute("class","d-block w-25");
+        let pcd = document.createElement("div");
+        if (icd.childElementCount < 1) {
+            pcd.setAttribute("class","carousel-item active");    
+        } else {
+            pcd.setAttribute("class","carousel-item");
+        }
+        pcd.appendChild(p);
+        icd.appendChild(pcd);
+        
+    }));    
+    
+    cd.setAttribute("data-interval","2000");
+    $(".carousel.slide").carousel();
+
+}
+
+function doInsertImages(images) {
+    const imageContainer = document.getElementById("images");
 
     images.then(i => i.forEach(u => {
         let p = document.createElement("img");
@@ -45,27 +76,22 @@ function doInsertImages() {
         a.setAttribute("class","imageLink");
         a.appendChild(p);
         imageContainer.appendChild(a);
-        let p2 = p.cloneNode();
-        p2.setAttribute("class","d-block w-25");
-        let pcd = document.createElement("div");
-        if (icd.childElementCount < 1) {
-            pcd.setAttribute("class","carousel-item active");    
-        } else {
-            pcd.setAttribute("class","carousel-item");
-        }
-        pcd.appendChild(p2);
-        icd.appendChild(pcd);
-        
 
     }));    
+
 }
 
 window.onload = function(){
     const refreshButton = document.getElementById("refresh");
     refreshButton.addEventListener("click",() => {
         doRemoveAllImages();
+        var images = doGetRequest();
         doInsertImages(images);
+        doRemoveCarousel();
+        doInsertCarousel(images);
     });
 
+    var images = doGetRequest();
     doInsertImages(images);  
+    doInsertCarousel(images);
 };
