@@ -30,7 +30,7 @@ function doInsertCarousel(images) {
     let cd = document.createElement("div");
     cd.setAttribute("class","carousel slide");
     cd.setAttribute("data-ride","carousel");
-    cd.setAttribute("data-pause","none");
+    // cd.setAttribute("data-pause","none");
     cd.setAttribute("data-interval","False");
 
     let icd = document.createElement("div");
