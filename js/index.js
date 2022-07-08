@@ -9,6 +9,7 @@ async function doGetRequest() {
 
     console.log(config);
 
+    // axios working via CDN in html
     await axios(config).then(async r => data = await r.data).catch(err => console.log(err));
     return data;
 }
