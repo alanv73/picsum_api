@@ -21,12 +21,12 @@ h1 {
 a {
     display: block;
     width: 33.3%;
-    transition: .8s opacity;
 }
 
-img {
+a img {
     height: 100%;
     max-width: 100%;
+    transition: .8s opacity;
 }
 
 #images:hover img {
@@ -46,7 +46,9 @@ img {
     margin: 0 5px 0 0;
 }
 
+
 .carousel img {
     margin: 20px auto;
     border-radius: 10px;
+    height: 30vh;
 }

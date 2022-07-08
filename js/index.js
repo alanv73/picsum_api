@@ -45,7 +45,7 @@ function doInsertCarousel(images) {
         p.setAttribute("alt",`photo by ${u["author"]}`);
         p.setAttribute("data-toggle","tooltip");
         p.setAttribute("title",`photo by ${u["author"]}`);
-        p.setAttribute("class","d-block w-25");
+        p.setAttribute("class","d-block");
         let pcd = document.createElement("div");
         if (icd.childElementCount < 1) {
             pcd.setAttribute("class","carousel-item active");    
