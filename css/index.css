@@ -15,6 +15,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: flex-start;
     height: 200vw;
+    column-gap: 0px;
 }
 
 a {
