@@ -1,25 +1,39 @@
+body {
+    background-color: black !important;
+}
+
 h1 {
     text-align: center;
+    color: white !important;
 }
 
 #images {
     max-width: 80%;
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    height: 200vw;
 }
 
 a {
     display: block;
-    height: 200px;
-    max-width: 30%;
+    width: 33.3%;
+    transition: .8s opacity;
 }
 
 img {
     height: 100%;
     max-width: 100%;
+}
+
+#images:hover img {
+    opacity: 0.3;
+}
+
+#images:hover img:hover {
+    opacity: 1;
 }
 
 #refresh {
