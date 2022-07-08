@@ -27,7 +27,7 @@ function doRemoveCarousel() {
 }
 
 function doInsertCarousel(images) {
-    const outerContainer = document.querySelector(".container-fluid");
+    const outerContainer = document.querySelector(".container.slideshow");
     let cd = document.createElement("div");
     cd.setAttribute("class","carousel slide");
     cd.setAttribute("data-ride","carousel");
