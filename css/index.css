@@ -26,7 +26,7 @@ a {
 a img {
     height: 100%;
     max-width: 100%;
-    transition: .8s opacity;
+    transition: 0.8s opacity;
 }
 
 #images:hover img {
@@ -45,7 +45,6 @@ a img {
 #refresh i {
     margin: 0 5px 0 0;
 }
-
 
 .carousel img {
     margin: 20px auto;
