@@ -1,10 +1,16 @@
-body {
+body,
+.sticky-top {
     background-color: black !important;
+}
+
+.sticky-top {
+    padding-bottom: 20px;
 }
 
 h1 {
     text-align: center;
     color: white !important;
+    margin-bottom: 0px !important;
 }
 
 #images {
@@ -38,7 +44,7 @@ a img {
 }
 
 #refresh {
-    margin: 20px auto;
+    margin: 5px auto;
     display: block;
 }
 
