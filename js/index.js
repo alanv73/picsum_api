@@ -82,17 +82,20 @@ function doInsertImages(images) {
 
 }
 
+let refresh = () => {
+    doRemoveAllImages();
+    var images = doGetRequest();
+    doInsertImages(images);
+    doRemoveCarousel();
+    doInsertCarousel(images);
+}
+
 window.onload = function(){
     const refreshButton = document.getElementById("refresh");
-    refreshButton.addEventListener("click",() => {
-        doRemoveAllImages();
-        var images = doGetRequest();
-        doInsertImages(images);
-        doRemoveCarousel();
-        doInsertCarousel(images);
-    });
+    refreshButton.addEventListener("click",refresh);
 
     var images = doGetRequest();
     doInsertImages(images);  
     doInsertCarousel(images);
+    setInterval(refresh, 300000);
 };
