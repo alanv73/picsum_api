@@ -1,3 +1,5 @@
+var intervalID;
+
 async function doGetRequest() {
     var data;
     var page = Number.parseInt((Math.random() * 34) + 1);
@@ -92,10 +94,14 @@ let refresh = () => {
 
 window.onload = function(){
     const refreshButton = document.getElementById("refresh");
-    refreshButton.addEventListener("click",refresh);
+    refreshButton.addEventListener("click",() => {
+        clearInterval(intervalID);
+        intervalID = setInterval(refresh,300000);
+        refresh();
+    });
 
     var images = doGetRequest();
     doInsertImages(images);  
     doInsertCarousel(images);
-    setInterval(refresh, 300000);
-};
+    intervalID = setInterval(refresh, 300000);
+}
